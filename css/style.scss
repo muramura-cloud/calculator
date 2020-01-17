@@ -1,0 +1,134 @@
+@charset 'UTF-8';
+
+
+
+body {
+  font-family: Verdana,sans-serif;
+}
+
+.calculateResult {
+  background-color: #222;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  h1 {
+    width: 700px;
+    text-align: right;
+    background-color: rgba(white,.7);
+    color: black;
+    margin: 0 auto;
+    padding: 10px;
+  }
+}
+
+#container {
+  width: 700px;
+}
+
+.calculateBoard {
+  background-color: #222;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  .boardBtn {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    p {
+      position: relative;
+      padding-top: 100%;
+      border-radius: 4px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 4px 0 #222;
+      user-select: none;text-indent:100%;
+      white-space:nowrap;
+      overflow:hidden;
+      &:active {
+        box-shadow: 0 0 0;
+        margin-top: 4px;
+        padding-top: 95%;
+      }
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: calc(50% - 45px);
+        display: block;
+        transform: translateY(-50%);
+        font-size: 45px;
+        counter-increment: number;
+        content: counter(number);
+      }
+    }
+  }
+  .numbersBoard {
+    background-color: tomato;
+    counter-reset: number;
+    .numberBtn {
+      p {
+        background-color:gray;
+        color: white;
+      }
+      &:last-child {
+        p {
+          &::before {
+            content: '.';
+          }
+        }
+      }
+    }
+  }
+  .calculationsBoard {
+    background-color: tomato;
+    .calculationsBtn {
+      p {
+        background-color: white;
+      }
+      &:nth-child(1) {
+        p {
+          &::before {
+            content: 'C';
+          }
+        }
+      }
+      &:nth-child(2) {
+        p {
+          &::before {
+            content: '＋';
+          }
+        }
+      }
+      &:nth-child(3) {
+        p {
+          &::before {
+            content: 'ー';
+          }
+        }
+      }
+      &:nth-child(4) {
+        p {
+          &::before {
+            content: '÷';
+          }
+        }
+      }
+      &:nth-child(5) {
+        p {
+          &::before {
+            content: '×';
+          }
+        }
+      }
+      &:nth-child(6) {
+        p {
+          &::before {
+            content: '＝';
+          }
+        }
+      }
+    }
+  }
+}
